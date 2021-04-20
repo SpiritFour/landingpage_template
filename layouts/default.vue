@@ -1,27 +1,38 @@
+<i18n global>
+{
+  "en": {
+    "title": "Title of Landingpage",
+    "name": "rando"
+  },
+  "de": {
+    "title": "Titel der Landingpage"
+  }
+}
+</i18n>
+
 <i18n>
 {
   "en": {
     "login": "Login",
-    "startFreeTrial": "Start free Trial"
+    "try": "Try"
   },
   "de": {
     "login": "Login",
-    "startFreeTrial": "Kostenloser Probezugang"
+    "try": "Probiere"
   }
 }
 </i18n>
 
 <template>
   <v-app dark>
-    <v-app-bar :clipped-left="clipped" fixed app>
-      <v-toolbar-title v-text="title" />
+    <v-app-bar fixed app>
+      <img src="~/assets/img/logo.png" height="100%" class="mr-4" />
+      <v-toolbar-title>{{ $t('title') }}</v-toolbar-title>
       <v-spacer />
-      <v-btn @click.stop="rightDrawer = !rightDrawer">
+      <v-btn>
         {{ $t('login') }}
       </v-btn>
-      <v-btn @click.stop="rightDrawer = !rightDrawer">
-        {{ $t('startFreeTrial') }}
-      </v-btn>
+      <v-btn> {{ $t('try') }} {{ $t('name') }} </v-btn>
       <Utils-LanguageSwitcher />
     </v-app-bar>
     <v-main>
@@ -36,29 +47,5 @@
 </template>
 
 <script>
-export default {
-  data() {
-    return {
-      clipped: false,
-      drawer: false,
-      fixed: false,
-      items: [
-        {
-          icon: 'mdi-apps',
-          title: 'Welcome',
-          to: '/',
-        },
-        {
-          icon: 'mdi-chart-bubble',
-          title: 'Inspire',
-          to: '/inspire',
-        },
-      ],
-      miniVariant: false,
-      right: true,
-      rightDrawer: false,
-      title: 'Vuetify.js',
-    }
-  },
-}
+export default {}
 </script>
