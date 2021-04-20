@@ -1,5 +1,7 @@
 import colors from 'vuetify/es5/util/colors'
 
+import { messages } from "./utils/translations.js";
+
 export default {
   // Target: https://go.nuxtjs.dev/config-target
   target: 'static',
@@ -39,6 +41,7 @@ export default {
   modules: [
     // https://go.nuxtjs.dev/pwa
     '@nuxtjs/pwa',
+    "nuxt-i18n"
   ],
 
   // PWA module configuration: https://go.nuxtjs.dev/pwa
@@ -67,6 +70,41 @@ export default {
     },
   },
 
+  i18n: {
+    seo: true,
+    locales: [
+      {
+        code: "en",
+        iso: "en-US",
+      },
+      {
+        code: "de",
+        iso: "de-DE",
+      },
+    ],
+    defaultLocale: "en",
+    detectBrowserLanguage: {
+      alwaysRedirect: false,
+      fallbackLocale: "en",
+      onlyOnRoot: true,
+      useCookie: true,
+      cookieCrossOrigin: false,
+      cookieKey: "i18n_redirected",
+      cookieSecure: false,
+    },
+    vueI18n: {
+      fallbackLocale: "en",
+      messages: messages,
+    },
+  },
+
   // Build Configuration: https://go.nuxtjs.dev/config-build
-  build: {},
+  build: {
+    extend(config, { isDev }) {
+      // Sets webpack's mode to development if `isDev` is true.
+      if (isDev) {
+        config.mode = "development";
+      }
+    },
+  },
 }
