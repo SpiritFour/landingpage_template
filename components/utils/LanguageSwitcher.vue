@@ -3,7 +3,7 @@
     <v-select
       v-model="selectedLocale"
       :items="availableLocales"
-      style="width: 5em"
+      style="width: min-content"
       eager
       flat
       dense
@@ -12,7 +12,7 @@
       rounded
     >
       <template #selection="{ item }">
-        <img :src="item.flag" style="width: 2em" />
+        <img :src="item.flag" style="width: 2em" class="ml-2" />
       </template>
       <template #item="{ item }">
         <img :src="item.flag" style="width: 2em" class="mr-2" />
@@ -54,5 +54,9 @@ export default {
 <style>
 .v-input__append-inner {
   display: none !important;
+}
+.v-input__slot {
+  background: transparent !important;
+  padding: 0 !important;
 }
 </style>

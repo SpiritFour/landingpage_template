@@ -25,7 +25,7 @@
 
 <template>
   <v-app dark>
-    <v-app-bar fixed app>
+    <v-app-bar fixed app elevation="0" color="transparent">
       <img src="~/assets/img/logo.png" height="100%" class="mr-4" />
       <v-toolbar-title>{{ $t('title') }}</v-toolbar-title>
       <v-spacer />
@@ -40,8 +40,10 @@
         <nuxt />
       </v-container>
     </v-main>
-    <v-footer :absolute="!fixed" app>
-      <span>&copy; {{ new Date().getFullYear() }}</span>
+    <v-footer absolute color="transparent" padless app>
+      <v-col class="text-center" cols="12">
+        <span>&copy; {{ new Date().getFullYear() }}</span>
+      </v-col>
     </v-footer>
   </v-app>
 </template>
