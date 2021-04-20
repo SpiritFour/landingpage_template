@@ -9,6 +9,9 @@ export default {
   router: {
     base,
   },
+  static: {
+    prefix: base,
+  },
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
     titleTemplate: '%s - landingpage_template',
