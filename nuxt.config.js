@@ -1,11 +1,14 @@
 import colors from 'vuetify/es5/util/colors'
 
 import { messages } from './utils/translations.js'
+const base = '/landingpage_template'
 
 export default {
   // Target: https://go.nuxtjs.dev/config-target
   target: 'static',
-
+  router: {
+    base,
+  },
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
     titleTemplate: '%s - landingpage_template',
