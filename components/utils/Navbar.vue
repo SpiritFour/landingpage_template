@@ -9,22 +9,22 @@
       color="transparent"
     >
       <img src="~/assets/img/logo.png" height="100%" class="mr-4" />
-      <v-toolbar-title>{{ $t('title') }}</v-toolbar-title>
+      <v-toolbar-title class="textColor">{{ $t('title') }}</v-toolbar-title>
 
-      <v-btn elevation="0" plain>
+      <v-btn elevation="0" plain class="textColor">
         {{ $t('feautres') }}
       </v-btn>
-      <v-btn elevation="0" plain>
+      <v-btn elevation="0" plain class="textColor">
         {{ $t('pricing') }}
       </v-btn>
-      <v-btn elevation="0" plain>
+      <v-btn elevation="0" plain class="textColor">
         {{ $t('ourMission') }}
       </v-btn>
       <v-spacer />
-      <v-btn elevation="0" plain>
+      <v-btn elevation="0" plain class="textColor">
         {{ $t('login') }}
       </v-btn>
-      <v-btn elevation="0" color="primary">
+      <v-btn elevation="0" color="primary" class="textColor">
         {{ $t('try') }} {{ $t('name') }}
       </v-btn>
       <Utils-LanguageSwitcher />
@@ -32,41 +32,53 @@
     <!--    for smaller devices add drawer-->
     <v-app-bar v-else fixed app elevation="0" color="transparent">
       <img src="~/assets/img/logo.png" height="100%" class="mr-4" />
-      <v-toolbar-title>{{ $t('name') }}</v-toolbar-title>
+      <v-toolbar-title class="textColor">{{ $t('name') }}</v-toolbar-title>
       <v-spacer></v-spacer>
 
-      <v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
+      <v-app-bar-nav-icon
+        class="textColor"
+        @click.stop="drawer = !drawer"
+      ></v-app-bar-nav-icon>
     </v-app-bar>
-    <v-navigation-drawer v-model="drawer" app right temporary>
+    <v-navigation-drawer
+      v-model="drawer"
+      class="gradientBG"
+      app
+      right
+      temporary
+    >
       <v-list nav dense class="d-flex justify-end align-center">
         <Utils-LanguageSwitcher class="pl-5" />
         <v-spacer></v-spacer>
-        <v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
+        <v-app-bar-nav-icon
+          class="textColor"
+          @click.stop="drawer = !drawer"
+        ></v-app-bar-nav-icon>
       </v-list>
       <v-list nav dense>
         <v-list-item>
-          <v-btn elevation="0" plain>
+          <v-btn elevation="0" plain class="textColor">
             {{ $t('features') }}
           </v-btn>
         </v-list-item>
         <v-list-item>
-          <v-btn elevation="0" plain>
+          <v-btn elevation="0" plain class="textColor">
             {{ $t('pricing') }}
           </v-btn>
         </v-list-item>
         <v-list-item>
-          <v-btn elevation="0" plain>
+          <v-btn elevation="0" plain class="textColor">
             {{ $t('ourMission') }}
           </v-btn>
         </v-list-item>
         <v-list-item> </v-list-item>
         <v-list-item>
-          <v-btn elevation="0" plain>
+          <v-btn elevation="0" plain class="textColor">
             {{ $t('login') }}
           </v-btn>
         </v-list-item>
         <v-list-item>
-          <v-btn elevation="0" color="primary">
+          <v-btn elevation="0" color="primary" class="textColor">
             {{ $t('try') }} {{ $t('name') }}
           </v-btn>
         </v-list-item>

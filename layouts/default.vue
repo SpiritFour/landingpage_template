@@ -1,10 +1,8 @@
 <template>
-  <v-app dark>
+  <v-app class="gradientBG textColor">
     <Utils-Navbar />
     <v-main>
-      <v-container>
-        <nuxt />
-      </v-container>
+      <nuxt />
     </v-main>
     <v-footer absolute color="transparent" padless app>
       <v-col class="text-center" cols="12">
@@ -17,3 +15,15 @@
 <script>
 export default {}
 </script>
+
+<style>
+.transparentBG {
+  background: rgba(0, 0, 0, 0) !important;
+}
+.gradientBG {
+  background: linear-gradient(to bottom, #7927b2, #fb3182) !important;
+}
+.textColor {
+  color: white !important;
+}
+</style>
