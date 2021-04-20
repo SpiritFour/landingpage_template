@@ -32,7 +32,7 @@
     <!--    for smaller devices add drawer-->
     <v-app-bar v-else fixed app elevation="0" color="transparent">
       <img src="~/assets/img/logo.png" height="100%" class="mr-4" />
-      <v-toolbar-title>{{ $t('title') }}</v-toolbar-title>
+      <v-toolbar-title>{{ $t('name') }}</v-toolbar-title>
       <v-spacer></v-spacer>
 
       <v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
@@ -86,11 +86,9 @@ export default {
 <i18n global>
 {
   "en": {
-    "title": "Title",
     "name": "rando"
   },
   "de": {
-    "title": "Titel"
   }
 }
 </i18n>
