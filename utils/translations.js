@@ -1,5 +1,4 @@
 export const messages = {
-  en: {
-  },
+  en: {},
   de: {},
-};
+}
