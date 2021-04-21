@@ -70,9 +70,9 @@ export default {
       customProperties: true,
     },
     theme: {
-      dark: false,
+      dark: true,
       themes: {
-        light: {
+        dark: {
           primary: colors.blue.darken2,
           accent: colors.grey.darken3,
           secondary: colors.amber.darken3,

@@ -1,8 +1,6 @@
 // Ref: https://github.com/nuxt-community/vuetify-module#customvariables
+//@import '~vuetify/src/styles/styles.sass';
 
 $btn-border-radius: 12px;
-
-$body-font-color: 'white';
-$heading-font-color: $body-font-color;
 
 @import '~vuetify/src/styles/styles.sass';

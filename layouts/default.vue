@@ -1,7 +1,7 @@
 <template>
-  <v-app class="gradientBG textColor">
+  <v-app class="transparentBG">
     <Utils-Navbar />
-    <v-main>
+    <v-main class="animatedBG">
       <nuxt />
     </v-main>
     <v-footer absolute color="transparent" padless app>
@@ -20,10 +20,24 @@ export default {}
 .transparentBG {
   background: rgba(0, 0, 0, 0) !important;
 }
-.gradientBG {
+.gradientBG2 {
   background: linear-gradient(to bottom, #7927b2, #fb3182) !important;
 }
-.textColor {
-  color: white !important;
+.animatedBG {
+  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 </style>
