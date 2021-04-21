@@ -1,7 +1,7 @@
 <template>
   <v-app class="transparentBG">
     <Utils-Navbar />
-    <v-main class="animatedBG">
+    <v-main class="animatedBG" style="overflow: hidden">
       <nuxt />
     </v-main>
     <v-footer absolute color="transparent" padless app>

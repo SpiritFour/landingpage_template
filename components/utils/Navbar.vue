@@ -32,7 +32,7 @@
       <Utils-LanguageSwitcher />
     </v-app-bar>
     <!--    for smaller devices add drawer-->
-    <v-app-bar v-else fixed app elevation="0" color="transparent">
+    <v-app-bar v-else app absolute elevation="0" color="transparent">
       <img src="~/assets/img/logo.png" height="100%" class="mr-4" />
       <v-toolbar-title>{{ $t('name') }}</v-toolbar-title>
       <v-spacer></v-spacer>

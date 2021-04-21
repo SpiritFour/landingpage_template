@@ -36,7 +36,6 @@
     <img
       data-aos="fade-right"
       data-aos-delay="50"
-      data-aos-offset="400"
       src="~assets/img/product.png"
       style="width: 100%"
       class="mt-10"
@@ -48,6 +47,7 @@
         cols="12"
         sm="4"
         class="text-left"
+        data-aos-delay="50"
         :data-aos="$t('slide' + i)"
       >
         <div class="icon">
