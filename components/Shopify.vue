@@ -41,7 +41,7 @@
         </div>
       </v-row>
       <v-row class="mt-8">
-        <v-col justify="top">
+        <v-col justify="top" cols="12" sm="6">
           <img
             src="https://picsum.photos/seed/alksdjflöa/1600/1200"
             style="width: 80%"
@@ -63,8 +63,7 @@
             v-for="img in imageSortingList"
             :key="img"
             :src="img"
-            style="width: 30%"
-            class="ma-2"
+            style="width: 30%; margin: 1.5%"
           />
         </transition-group>
       </v-row>
