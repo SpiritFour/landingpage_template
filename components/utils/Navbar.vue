@@ -3,7 +3,7 @@
     <!--    this is for all sm and up devices-->
     <v-app-bar
       v-if="$vuetify.breakpoint.mdAndUp"
-      fixed
+      absolute
       app
       elevation="0"
       color="transparent"
