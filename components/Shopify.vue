@@ -96,7 +96,7 @@
       <v-row justify="center" class="text-body-2 font-weight-black mt-10">
         {{ $t('testimonial.from') }}
       </v-row>
-      <v-row justify="center mt-16"><FreeTrialBtn /></v-row>
+      <v-row justify="center" class="mt-16"><FreeTrialBtn /></v-row>
     </v-container>
   </v-container>
 </template>
