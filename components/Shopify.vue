@@ -19,14 +19,7 @@
           </v-text-field>
         </v-col>
         <v-col cols="12" sm="6">
-          <v-btn
-            color="info"
-            elevation="0"
-            x-large
-            class="font-weight-black"
-            style="border-radius: 4px"
-            >{{ $t('startFree') }}</v-btn
-          >
+          <FreeTrialBtn />
         </v-col>
       </v-row>
     </v-col>
@@ -68,23 +61,53 @@
         </transition-group>
       </v-row>
       <v-row class="text-left">
-        <FeatureText :feature="$t('sorting')" />
+        <v-col>
+          <FeatureText :feature="$t('sorting')" />
+        </v-col>
       </v-row>
     </v-container>
-    <v-row class="mt-5">
-      <v-col v-for="i in 3" :key="i" cols="12" sm="4" class="text-left">
-        <FeatureText :feature="$t('feature' + i)" />
-      </v-col>
-    </v-row>
+    <v-container class="mt-12" data-aos="fade-left" data-aos-delay="50">
+      <v-row>
+        <div class="text-h5 font-weight-black">Instantaneous 100% preview</div>
+      </v-row>
+      <v-row justify="center" class="mt-8">
+        <video ref="video" width="80%" autoplay preload="auto" muted loop>
+          <source src="~/assets/video/video-full.webm" type="video/webm" />
+          Your browser does not support video.
+        </video>
+      </v-row>
+      <v-row class="text-left">
+        <v-col>
+          <FeatureText :feature="$t('instant')" />
+        </v-col>
+      </v-row>
+    </v-container>
+    <v-container class="mt-12">
+      <v-row>
+        <v-col v-for="i in 3" :key="i" cols="12" sm="4" class="text-left">
+          <FeatureText :feature="$t('feature' + i)" />
+        </v-col>
+      </v-row>
+    </v-container>
+    <v-container class="mt-16" data-aos="fade-up" data-aos-delay="50">
+      <v-row class="text-h5">
+        {{ $t('testimonial.quote') }}
+      </v-row>
+      <v-row justify="center" class="text-body-2 font-weight-black mt-10">
+        {{ $t('testimonial.from') }}
+      </v-row>
+      <v-row justify="center mt-16"><FreeTrialBtn /></v-row>
+    </v-container>
   </v-container>
 </template>
 
 <script>
 import FeatureText from '~/components/FeatureText'
+import FreeTrialBtn from '~/components/FreeTrialBtn'
 
 export default {
   name: 'Shopify',
-  components: { FeatureText },
+  components: { FreeTrialBtn, FeatureText },
   data() {
     return {
       valid: false,
@@ -133,7 +156,6 @@ export default {
     nameLess10: 'Name must be less than 10 characters',
     emailRequired: 'E-mail is required',
     emailValid: 'E-mail must be valid',
-    startFree: 'Start free trial',
     enterEmail: 'Enter your email address',
     disclaimer: 'Try Shopify free for 14 days, no credit card required. By entering your email, you agree to receive marketing emails from Shopify.',
     // focus overlay
@@ -145,6 +167,12 @@ export default {
     // sorting feature
     sorting: {
       title: 'Automatically sorts your images contentwise',
+      text: 'Bli bla blub this is really nice and you really need this',
+      img: '1.svg',
+    },
+    // instant 100% feature
+    instant: {
+      title: 'Instantaneous 100% preview of your uncompressed raw images',
       text: 'Bli bla blub this is really nice and you really need this',
       img: '1.svg',
     },
@@ -166,6 +194,10 @@ export default {
       text: 'Shopify handles everything from marketing and payments, to secure checkout and shipping',
       img: '3.svg',
       slide: 'fade-up-left',
+    },
+    testimonial: {
+      quote: '“Shopify is better than any other platform we’ve played with, and we’ve played with them all.”',
+      from: 'JONATHON BAYME, CEO OF THEORY11',
     },
   },
   de: {},
