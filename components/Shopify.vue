@@ -30,7 +30,7 @@
               data-aos-duration="1000"
               data-aos-anchor-placement="center-center"
               src="~/assets/img/features/focus_peaking/2.jpg"
-              style="width: 100%; position: absolute; left: 0"
+              style="width: 100%; position: absolute; left: 0; top: 0"
             />
           </div>
         </v-col>
@@ -72,7 +72,15 @@
         {{ $t('instant.heading') }}
       </v-row>
       <v-row justify="center" class="mt-8">
-        <video ref="video" width="80%" autoplay preload="auto" muted loop>
+        <video
+          ref="video"
+          width="80%"
+          autoplay
+          preload="auto"
+          muted
+          loop
+          playsinline
+        >
           <source src="~/assets/video/video-full.webm" type="video/webm" />
           Your browser does not support video.
         </video>
