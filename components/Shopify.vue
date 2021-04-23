@@ -75,6 +75,7 @@
         <video
           ref="video"
           width="80%"
+          height="100%"
           autoplay
           preload="auto"
           muted
@@ -82,6 +83,7 @@
           playsinline
         >
           <source src="~/assets/video/video-full.webm" type="video/webm" />
+          <source src="~/assets/video/video-full.mp4" type="video/mp4" />
           Your browser does not support video.
         </video>
       </v-row>
