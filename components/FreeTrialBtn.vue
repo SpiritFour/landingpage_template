@@ -35,6 +35,7 @@
     <v-col cols="12" sm="6">
       <v-row justify="center">
         <v-col
+          v-if="!jump"
           align-self="center"
           cols="auto"
           class="mx-0 pa-0"
