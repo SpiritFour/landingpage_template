@@ -7,21 +7,7 @@
       {{ $t('subPhrase') }}
     </div>
     <v-col class="mx-auto mt-4" style="max-width: 500px">
-      <v-row justify="center" align="center">
-        <v-col cols="12" sm="6" align="center">
-          <v-text-field
-            v-model="email"
-            :rules="emailRules"
-            :label="$t('enterEmail')"
-            required
-            style="max-width: 250px"
-          >
-          </v-text-field>
-        </v-col>
-        <v-col cols="12" sm="6">
-          <FreeTrialBtn />
-        </v-col>
-      </v-row>
+      <FreeTrialBtn />
     </v-col>
     <v-row class="text-caption mt-4 mx-auto" style="max-width: 400px">
       {{ $t('disclaimer') }}
@@ -124,7 +110,9 @@
       <v-row justify="center" class="text-body-2 font-weight-black mt-10">
         {{ $t('testimonial.from') }}
       </v-row>
-      <v-row justify="center" class="mt-16"><FreeTrialBtn /></v-row>
+      <v-row justify="center" class="mt-16"
+        ><FreeTrialBtn :jump="true"
+      /></v-row>
     </v-container>
   </v-container>
 </template>
@@ -161,18 +149,6 @@ export default {
       7,
     ]
     return {
-      valid: false,
-      firstname: '',
-      lastname: '',
-      nameRules: [
-        (v) => !!v || this.$t('nameRequired'),
-        (v) => v.length <= 10 || this.$t('nameLess10'),
-      ],
-      email: '',
-      emailRules: [
-        (v) => !!v || this.$t('emailRequired'),
-        (v) => /.+@.+/.test(v) || this.$t('emailValid'),
-      ],
       imageOrdering,
       imageSortingList: [...Array(20).keys()].map((i) => {
         return {
@@ -216,9 +192,6 @@ export default {
     subPhrase: 'Trusted by over 1,000,000 businesses worldwide',
     nameRequired: 'Name is required',
     nameLess10: 'Name must be less than 10 characters',
-    emailRequired: 'E-mail is required',
-    emailValid: 'E-mail must be valid',
-    enterEmail: 'Enter your email address',
     disclaimer: 'Try Shopify free for 14 days, no credit card required. By entering your email, you agree to receive marketing emails from Shopify.',
     // focus overlay
     focus: {
