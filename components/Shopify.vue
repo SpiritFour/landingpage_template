@@ -28,10 +28,8 @@
     </v-row>
     <!--    focus feature-->
     <v-container class="mt-12" data-aos="fade-left" data-aos-delay="50">
-      <v-row>
-        <div class="text-h5 font-weight-black">
-          Automatic out-of-focus Detection
-        </div>
+      <v-row class="text-h5 font-weight-black">
+        {{ $t('focus.heading') }}
       </v-row>
       <v-row class="mt-8">
         <v-col justify="top" cols="12" sm="6">
@@ -45,21 +43,16 @@
     </v-container>
     <!--    automatic sorting-->
     <v-container class="mt-12" data-aos="fade-right" data-aos-delay="50">
-      <v-row>
-        <div class="text-h5 font-weight-black">
-          Automatic contentwise sorting
-        </div>
+      <v-row class="text-h5 font-weight-black">
+        {{ $t('sorting.heading') }}
       </v-row>
-      <v-row>
-        <transition-group name="flip-list" class="mt-8">
-          <img
-            v-for="img in imageSortingList"
-            :key="img"
-            :src="img"
-            style="width: 30%; margin: 1.5%"
-          />
-        </transition-group>
-      </v-row>
+      <v-row> Automatic contentwise sorting </v-row>
+      <transition-group name="flip-list" class="mt-8 row">
+        <v-col v-for="data in imageSortingList" :key="data.img">
+          <img :src="data.img" style="width: 50px" />
+          <div>{{ data.date.toLocaleTimeString() }}</div>
+        </v-col>
+      </transition-group>
       <v-row class="text-left">
         <v-col>
           <FeatureText :feature="$t('sorting')" />
@@ -67,8 +60,8 @@
       </v-row>
     </v-container>
     <v-container class="mt-12" data-aos="fade-left" data-aos-delay="50">
-      <v-row>
-        <div class="text-h5 font-weight-black">Instantaneous 100% preview</div>
+      <v-row class="text-h5 font-weight-black">
+        {{ $t('instant.heading') }}
       </v-row>
       <v-row justify="center" class="mt-8">
         <video ref="video" width="80%" autoplay preload="auto" muted loop>
@@ -86,6 +79,16 @@
       <v-row>
         <v-col v-for="i in 3" :key="i" cols="12" sm="4" class="text-left">
           <FeatureText :feature="$t('feature' + i)" />
+        </v-col>
+      </v-row>
+    </v-container>
+    <v-container>
+      <v-row>
+        <v-col v-for="i in 8" :key="i * 10">
+          <img
+            :src="require(`~/assets/img/features/testimonials/${i}.png`)"
+            style="width: 90px"
+          />
         </v-col>
       </v-row>
     </v-container>
@@ -109,6 +112,30 @@ export default {
   name: 'Shopify',
   components: { FreeTrialBtn, FeatureText },
   data() {
+    var imageOrdering = [
+      0,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      1,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+    ]
     return {
       valid: false,
       firstname: '',
@@ -122,21 +149,30 @@ export default {
         (v) => !!v || this.$t('emailRequired'),
         (v) => /.+@.+/.test(v) || this.$t('emailValid'),
       ],
-      imageSortingList: [
-        'https://picsum.photos/seed/alkssdffddfdjflöa/1600/1200',
-        'https://picsum.photos/seed/alksasdsfdjflöa/1600/1200',
-        'https://picsum.photos/seed/alksdasdfjflöa/1600/1200',
-      ],
+      imageOrdering,
+      imageSortingList: [...Array(22).keys()].map((i) => {
+        return {
+          img: require(`~/assets/img/features/sorting/sorting-${i + 1}.jpg`),
+          date: new Date(i * 100000 + Math.random() * 10000 + 30000000),
+          randomOrder: i,
+          actualOrder: imageOrdering[i],
+        }
+      }),
     }
   },
   methods: {
     shuffle() {
-      this.imageSortingList.reverse()
+      this.imageSortingList.sort((a, b) => a.actualOrder - b.actualOrder)
+      setTimeout(
+        () =>
+          this.imageSortingList.sort((a, b) => a.randomOrder - b.randomOrder),
+        3000
+      )
     },
   },
   mounted() {
     this.shuffle()
-    setInterval(this.shuffle, 3000)
+    setInterval(this.shuffle, 6000)
   },
 }
 </script>
@@ -160,18 +196,21 @@ export default {
     disclaimer: 'Try Shopify free for 14 days, no credit card required. By entering your email, you agree to receive marketing emails from Shopify.',
     // focus overlay
     focus: {
+      heading: 'Automatic out-of-focus Detection',
       title: 'Detect out of focus regions easily',
       text: 'Bli bla blub this is really nice and you really need this',
       img: '1.svg',
     },
     // sorting feature
     sorting: {
+      heading: 'Automatic contentwise sorting',
       title: 'Automatically sorts your images contentwise',
       text: 'Bli bla blub this is really nice and you really need this',
       img: '1.svg',
     },
     // instant 100% feature
     instant: {
+      heading: 'Instantaneous 100% preview',
       title: 'Instantaneous 100% preview of your uncompressed raw images',
       text: 'Bli bla blub this is really nice and you really need this',
       img: '1.svg',
