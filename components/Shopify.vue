@@ -188,8 +188,8 @@ export default {
 <i18n lang="json5">
 {
   en: {
-    titlePhrase: 'Sell online with Shopify',
-    subPhrase: 'Trusted by over 1,000,000 businesses worldwide',
+    titlePhrase: 'Lightning fast Image Culling',
+    subPhrase: 'Do you want to spend less time pre-selecting images?',
     nameRequired: 'Name is required',
     nameLess10: 'Name must be less than 10 characters',
     disclaimer: 'Try Shopify free for 14 days, no credit card required. By entering your email, you agree to receive marketing emails from Shopify.',
