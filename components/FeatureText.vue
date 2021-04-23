@@ -1,9 +1,6 @@
 <template>
   <div data-aos-delay="50" :data-aos="feature.slide">
-    <img
-      class="icon"
-      :src="require('~/assets/img/feature_images/' + feature.img)"
-    />
+    <v-icon size="42">{{ feature.img }}</v-icon>
     <div class="text-subtitle-2 font-weight-bold">
       {{ feature.title }}
     </div>
