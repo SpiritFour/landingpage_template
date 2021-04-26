@@ -8,10 +8,30 @@
       elevation="0"
       color="transparent"
     >
-      <img src="~/assets/img/logo.png" height="100%" class="mr-4" />
-      <v-toolbar-title class="text-button font-weight-black">{{
-        $t('name')
-      }}</v-toolbar-title>
+      <div
+        style="
+          background: white;
+          border-top-left-radius: 5px;
+          border-bottom-left-radius: 5px;
+        "
+        class="pl-2 pr-1"
+      >
+        <span class="font-weight-black transparentFont animatedBG text-h5">
+          <v-icon class="font-weight-black transparentFont animatedBG"
+            >mdi-eyedropper-variant</v-icon
+          >{{ $t('name') }}
+        </span>
+      </div>
+      <div
+        class="pr-2 pl-1 font-weight-black text-h5"
+        style="
+          background: black;
+          border-top-right-radius: 5px;
+          border-bottom-right-radius: 5px;
+        "
+      >
+        <div class="transparentFont animatedBG">.app</div>
+      </div>
 
       <v-btn elevation="0" plain>
         {{ $t('features') }}
@@ -23,12 +43,6 @@
         {{ $t('ourMission') }}
       </v-btn>
       <v-spacer />
-      <v-btn elevation="0" plain>
-        {{ $t('login') }}
-      </v-btn>
-      <v-btn elevation="0" color="primary">
-        {{ $t('try') }} {{ $t('name') }}
-      </v-btn>
       <Utils-LanguageSwitcher />
     </v-app-bar>
     <!--    for smaller devices add drawer-->
@@ -91,10 +105,17 @@ export default {
 }
 </script>
 
+<style>
+.white-image {
+  filter: invert();
+  -webkit-filter: invert();
+}
+</style>
+
 <i18n global>
 {
   "en": {
-    "name": "rando"
+    "name": "Photopicker"
   },
   "de": {
   }

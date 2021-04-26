@@ -15,10 +15,3 @@ export default {
   },
 }
 </script>
-<style scoped>
-.icon {
-  width: 3em;
-  filter: invert();
-  -webkit-filter: invert();
-}
-</style>

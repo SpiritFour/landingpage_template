@@ -98,7 +98,7 @@ export default {
 }
 </script>
 
-<style scoped>
+<style>
 .transparentFont {
   -webkit-text-fill-color: transparent;
   -webkit-background-clip: text;
