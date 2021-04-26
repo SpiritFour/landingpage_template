@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Shopify />
+    <Photopicker />
   </div>
 </template>
 
