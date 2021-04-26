@@ -13,8 +13,13 @@
       {{ $t('disclaimer') }}
     </v-row>
     <!--    focus feature-->
-    <v-container class="mt-12" data-aos="fade-left" data-aos-delay="50">
-      <v-row class="text-h5 font-weight-black">
+    <v-container
+      class="mt-12"
+      data-aos="fade-left"
+      data-aos-delay="50"
+      id="features"
+    >
+      <v-row class="text-h5 font-weight-black" justify="center">
         {{ $t('focus.heading') }}
       </v-row>
       <v-row class="mt-8">
@@ -163,7 +168,7 @@ export default {
       imageSortingList: [...Array(20).keys()].map((i) => {
         return {
           img: require(`~/assets/img/features/sorting/sorting-${i + 1}.jpg`),
-          date: new Date(i * 100000 + Math.random() * 10000 + 30000000),
+          date: new Date(i * 200000 + Math.random() * 10000 + 30000000),
           randomOrder: i,
           actualOrder: imageOrdering[i],
         }
@@ -202,7 +207,7 @@ export default {
     subPhrase: 'Do you want to spend less time pre-selecting images?',
     nameRequired: 'Name is required',
     nameLess10: 'Name must be less than 10 characters',
-    disclaimer: 'Try Shopify free for 14 days, no credit card required. By entering your email, you agree to receive marketing emails from Shopify.',
+    disclaimer: 'Sign up so we can keep you updated about new features. We would also like to contact you for feedback as we want to build this product together with the community.',
     // focus overlay
     focus: {
       heading: 'Automatic out-of-focus Detection',

@@ -5,6 +5,7 @@
       v-if="$vuetify.breakpoint.mdAndUp"
       absolute
       app
+      fixed
       elevation="0"
       color="transparent"
     >
@@ -33,14 +34,8 @@
         <div class="transparentFont animatedBG">.app</div>
       </div>
 
-      <v-btn elevation="0" plain>
+      <v-btn elevation="0" plain @click="clickHandler('#features')">
         {{ $t('features') }}
-      </v-btn>
-      <v-btn elevation="0" plain>
-        {{ $t('pricing') }}
-      </v-btn>
-      <v-btn elevation="0" plain>
-        {{ $t('ourMission') }}
       </v-btn>
       <v-spacer />
       <Utils-LanguageSwitcher />
@@ -67,26 +62,11 @@
       </v-list>
       <v-list nav dense>
         <v-list-item>
-          <v-btn elevation="0" plain>
+          <v-btn @click="clickHandler('#features')" elevation="0" plain>
             {{ $t('features') }}
           </v-btn>
         </v-list-item>
-        <v-list-item>
-          <v-btn elevation="0" plain>
-            {{ $t('pricing') }}
-          </v-btn>
-        </v-list-item>
-        <v-list-item>
-          <v-btn elevation="0" plain>
-            {{ $t('ourMission') }}
-          </v-btn>
-        </v-list-item>
         <v-list-item> </v-list-item>
-        <v-list-item>
-          <v-btn elevation="0" plain>
-            {{ $t('login') }}
-          </v-btn>
-        </v-list-item>
         <v-list-item>
           <v-btn elevation="0" color="primary">
             {{ $t('try') }} {{ $t('name') }}
@@ -101,6 +81,11 @@
 export default {
   data() {
     return { drawer: false }
+  },
+  methods: {
+    clickHandler(target) {
+      this.$vuetify.goTo(target, { duration: 300, offset: 100 })
+    },
   },
 }
 </script>
