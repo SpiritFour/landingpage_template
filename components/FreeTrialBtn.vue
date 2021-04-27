@@ -26,6 +26,9 @@
               :rules="emailRules"
               :label="$t('enterEmail')"
               required
+              solo
+              background-color="white"
+              light
             >
             </v-text-field>
           </v-form>
@@ -103,7 +106,7 @@ export default {
   -webkit-text-fill-color: transparent;
   -webkit-background-clip: text;
 }
->>> label {
+.label {
   font-size: 0.85em;
 }
 </style>
@@ -114,7 +117,7 @@ export default {
     startFree: 'Start free trial',
     emailRequired: 'E-mail is required',
     emailValid: 'E-mail must be valid',
-    enterEmail: 'Enter your email address',
+    enterEmail: 'Email',
   },
 }
 </i18n>

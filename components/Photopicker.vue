@@ -9,45 +9,26 @@
     <v-col class="mx-auto mt-4" style="max-width: 500px">
       <FreeTrialBtn />
     </v-col>
-    <v-row class="text-caption mt-4 mx-auto" style="max-width: 400px">
+    <v-row class="text-caption mt-4 mx-auto" style="max-width: 500px">
       {{ $t('disclaimer') }}
     </v-row>
-    <!--    focus feature-->
-    <v-container
-      class="mt-12"
-      data-aos="fade-left"
-      data-aos-delay="50"
-      id="features"
-    >
-      <v-row class="text-h5 font-weight-black" justify="center">
-        {{ $t('focus.heading') }}
-      </v-row>
-      <v-row class="mt-8">
-        <v-col justify="top" cols="12" sm="6">
-          <div style="position: relative; width: 80%; margin: auto">
-            <img
-              src="~/assets/img/features/focus_peaking/1.jpg"
-              style="width: 100%"
-            />
-            <img
-              data-aos="fade"
-              data-aos-easing="ease-in-out"
-              data-aos-duration="1000"
-              data-aos-anchor-placement="center-center"
-              src="~/assets/img/features/focus_peaking/2.jpg"
-              style="width: 100%; position: absolute; left: 0; top: 0"
-            />
-          </div>
+    <v-container class="mt-12">
+      <v-row>
+        <v-col v-for="i in 3" :key="i" cols="12" sm="4" class="text-left">
+          <FeatureText :feature="$t('feature' + i)" />
         </v-col>
-        <v-col class="text-left"> <FeatureText :feature="$t('focus')" /></v-col>
       </v-row>
     </v-container>
-    <!--    automatic sorting-->
-    <v-container class="mt-12" data-aos="fade-right" data-aos-delay="50">
-      <v-row class="text-h5 font-weight-black">
+    <v-container
+      class="mt-4"
+      data-aos="fade-right"
+      data-aos-delay="50"
+      style="height: 1232px"
+    >
+      <v-row class="text-h5 font-weight-black" justify="center" id="features">
         {{ $t('sorting.heading') }}
       </v-row>
-      <v-row>
+      <v-row justify="center">
         {{
           $t(
             this.sortedByTime ? 'sorting.timeSorted' : 'sorting.categorySorted'
@@ -73,7 +54,7 @@
     </v-container>
     <!--    instant 100% -->
     <v-container class="mt-12" data-aos="fade-left" data-aos-delay="50">
-      <v-row class="text-h5 font-weight-black">
+      <v-row class="text-h5 font-weight-black" justify="center">
         {{ $t('instant.heading') }}
       </v-row>
       <v-row justify="center" class="mt-8">
@@ -96,6 +77,30 @@
         <v-col>
           <FeatureText :feature="$t('instant')" />
         </v-col>
+      </v-row>
+    </v-container>
+    <v-container class="mt-12" data-aos="fade-left" data-aos-delay="50">
+      <v-row class="text-h5 font-weight-black" justify="center">
+        {{ $t('focus.heading') }}
+      </v-row>
+      <v-row class="mt-8">
+        <v-col justify="top" cols="12" sm="6">
+          <div style="position: relative; width: 80%; margin: auto">
+            <img
+              src="~/assets/img/features/focus_peaking/1.jpg"
+              style="width: 100%"
+            />
+            <img
+              data-aos="fade"
+              data-aos-easing="ease-in-out"
+              data-aos-duration="1000"
+              data-aos-anchor-placement="center-center"
+              src="~/assets/img/features/focus_peaking/2.jpg"
+              style="width: 100%; position: absolute; left: 0; top: 0"
+            />
+          </div>
+        </v-col>
+        <v-col class="text-left"> <FeatureText :feature="$t('focus')" /></v-col>
       </v-row>
     </v-container>
     <!--    rando features-->
@@ -165,7 +170,7 @@ export default {
     ]
     return {
       imageOrdering,
-      imageSortingList: [...Array(20).keys()].map((i) => {
+      imageSortingList: [...Array(15).keys()].map((i) => {
         return {
           img: require(`~/assets/img/features/sorting/sorting-${i + 1}.jpg`),
           date: new Date(i * 200000 + Math.random() * 10000 + 30000000),
@@ -207,7 +212,7 @@ export default {
     subPhrase: 'Do you want to spend less time pre-selecting your images?',
     nameRequired: 'Name is required',
     nameLess10: 'Name must be less than 10 characters',
-    disclaimer: 'Sign up so we can keep you updated about new features. We would also like to contact you for feedback as we want to build this product together with the community.',
+    disclaimer: 'Sign up for free so we can keep you updated about new features and gather feedback. We want to build this product with you.',
     // focus overlay
     focus: {
       heading: 'Automatic Out-Of-Focus Detection',
@@ -226,29 +231,26 @@ export default {
     },
     // instant 100% feature
     instant: {
-      heading: 'Instantaneous 100% preview with no lag',
+      heading: 'Lag free 100% preview',
       title: 'Directly get access tom a 100% preview of your uncompressed raw images',
       text: 'No stutter or lag when cycling through your images, they load instantly. You can directly zoom to the relevant parts to manually check the sharpness.',
       img: 'mdi-magnify-plus-outline',
     },
     // Feature row
     feature1: {
-      title: 'Beautiful themes that are responsive and customizable',
-      text: 'No design skills needed. You have complete control over the look and feel of your website, from its layout, to content and colors.',
-      img: '1.svg',
+      title: 'AI enabled content sorting',
+      img: 'mdi-sort-variant',
       slide: 'fade-up-right',
     },
     feature2: {
-      title: 'Pricing as low as $29/month',
-      text: 'Whether you sell online, on social media, in store, or out of the trunk of your car, Shopify has you covered. Start selling anywhere for just $29/month.',
-      img: '2.svg',
-      slide: 'fade-up',
+      title: 'Automatic Out-Of-Focus Detection',
+      img: 'mdi-image-filter-center-focus-strong',
+      slide: 'fade-up-right',
     },
     feature3: {
-      title: 'Trusted by over 1,000,000 businesses worldwide',
-      text: 'Shopify handles everything from marketing and payments, to secure checkout and shipping',
-      img: '3.svg',
-      slide: 'fade-up-left',
+      title: 'Lag free 100% preview',
+      img: 'mdi-magnify-plus-outline',
+      slide: 'fade-up-right',
     },
     testimonial: {
       quote: '“PhotoPicker is better than any other Culling Application we’ve played with, and we’ve played with them all.”',
