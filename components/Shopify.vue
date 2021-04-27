@@ -198,32 +198,32 @@ export default {
 <i18n lang="json5">
 {
   en: {
-    titlePhrase: 'Lightning fast Image Culling',
-    subPhrase: 'Do you want to spend less time pre-selecting images?',
+    titlePhrase: 'Lightning fast Image Culling Application',
+    subPhrase: 'Do you want to spend less time pre-selecting your images?',
     nameRequired: 'Name is required',
     nameLess10: 'Name must be less than 10 characters',
-    disclaimer: 'Try Shopify free for 14 days, no credit card required. By entering your email, you agree to receive marketing emails from Shopify.',
+    disclaimer: 'Try PhotoPicker for free for 14 days, no credit card required. By entering your email, you agree to receive marketing emails from PhotoPicker.',
     // focus overlay
     focus: {
-      heading: 'Automatic out-of-focus Detection',
+      heading: 'Automatic Out-Of-Focus Detection',
       title: 'Detect out of focus regions easily',
-      text: 'Bli bla blub this is really nice and you really need this',
+      text: 'Finally you dont have to spent ours sifting through images were the object is out of focus. We have automized this process by grouping out of focus images through AI. You stay in control at all time and still choose at any step',
       img: 'mdi-image-filter-center-focus-strong',
     },
     // sorting feature
     sorting: {
-      heading: 'Automatic contentwise sorting',
-      title: 'Automatically sorts your images contentwise',
-      text: 'Bli bla blub this is really nice and you really need this',
+      heading: 'Automatic content sorting',
+      title: 'Automatically sorts your images by content',
+      text: 'Ever wondered were this one shot went and you can not recall were you have placed it? Our app groups your content by topic or person and creates a readably file archive. So you spent less time searching for the perfect shoot.',
       img: 'mdi-sort-variant',
       timeSorted: 'Sorted by Date',
       categorySorted: 'Sorted by Category',
     },
     // instant 100% feature
     instant: {
-      heading: 'Instantaneous 100% preview',
-      title: 'Instantaneous 100% preview of your uncompressed raw images',
-      text: 'Bli bla blub this is really nice and you really need this',
+      heading: 'Instantaneous 100% preview with no lag',
+      title: 'Directly get access tom a 100% preview of your uncompressed raw images',
+      text: 'No stutter or lag when cycling through your images, they load instantly. You can directly zoom to the relevant parts to manually check the sharpness.',
       img: 'mdi-magnify-plus-outline',
     },
     // Feature row
@@ -246,10 +246,38 @@ export default {
       slide: 'fade-up-left',
     },
     testimonial: {
-      quote: '“Shopify is better than any other platform we’ve played with, and we’ve played with them all.”',
-      from: 'JONATHON BAYME, CEO OF THEORY11',
+      quote: '“PhotoPicker is better than any other Culling Application we’ve played with, and we’ve played with them all.”',
+      from: 'Moritz Wolf, CEO OF WhatsAnalyze',
     },
   },
-  de: {},
+  de: {
+    titlePhrase: 'Blitzschnelle Foto sortier Anwendung'
+    subPhrase: 'Wollen Sie weniger Zeit mit der Vorauswahl Ihrer Bilder verbringen?',
+    nameRequired: 'Name ist erforderlich',
+    nameLess10: 'Name muss weniger als 10 Zeichen lang sein',
+    disclaimer: 'Testen Sie PhotoPicker kostenlos für 14 Tage, keine Kreditkarte erforderlich. Durch die Eingabe Ihrer E-Mail stimmen Sie zu, Marketing-E-Mails von PhotoPicker zu erhalten.',
+    // Fokus-Overlay
+    focus: {
+      Überschrift: 'Automatische Unschärfe-Erkennung',
+      title: 'Unscharfe Bereiche einfach erkennen',
+      text: 'Endlich müssen Sie sich nicht mehr durch Bilder wühlen, in denen das Objekt unscharf ist. Wir haben diesen Prozess automatisiert, indem wir unscharfe Bilder durch KI gruppieren. Sie behalten jederzeit die Kontrolle und können immer noch in jedem Schritt wählen',
+      img: 'mdi-image-filter-center-focus-strong',
+    },
+    // Sortierfunktion
+    Sortierung: {
+      Überschrift: 'Automatische Inhaltssortierung',
+      title: 'Sortiert Ihre Bilder automatisch nach Inhalt',
+      text: 'Haben Sie sich schon einmal gefragt, wo diese eine Aufnahme geblieben ist und Sie können sich nicht erinnern, wo Sie sie platziert haben? Unsere App gruppiert Ihre Inhalte nach Thema oder Person und erstellt ein übersichtliches Dateiarchiv. So verbringen Sie weniger Zeit mit der Suche nach der perfekten Aufnahme.',
+      img: 'mdi-sort-variant',
+      timeSorted: 'Sorted by Date',
+      categorySorted: 'Sortiert nach Kategorie',
+    },
+    // sofortige 100%-Funktion
+    instant: {
+      Überschrift: 'Sofortige 100%-Vorschau ohne Verzögerung',
+      title: 'Sofortiger Zugriff auf eine 100%-Vorschau Ihrer unkomprimierten Rohbilder',
+      text: 'Kein Stottern oder Lag beim Durchblättern Ihrer Bilder, sie werden sofort geladen. Sie können direkt auf die relevanten Teile zoomen, um die Schärfe manuell zu überprüfen.',
+      img: 'mdi-magnify-plus-outline',
+    },
 }
 </i18n>
