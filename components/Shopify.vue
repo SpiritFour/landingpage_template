@@ -251,7 +251,7 @@ export default {
     },
   },
   de: {
-    titlePhrase: 'Blitzschnelle Foto sortier Anwendung'
+    titlePhrase: 'Blitzschnelle Foto sortier Anwendung',
     subPhrase: 'Wollen Sie weniger Zeit mit der Vorauswahl Ihrer Bilder verbringen?',
     nameRequired: 'Name ist erforderlich',
     nameLess10: 'Name muss weniger als 10 Zeichen lang sein',
@@ -279,5 +279,6 @@ export default {
       text: 'Kein Stottern oder Lag beim Durchblättern Ihrer Bilder, sie werden sofort geladen. Sie können direkt auf die relevanten Teile zoomen, um die Schärfe manuell zu überprüfen.',
       img: 'mdi-magnify-plus-outline',
     },
+  },
 }
 </i18n>
