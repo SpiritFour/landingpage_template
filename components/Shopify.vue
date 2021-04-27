@@ -214,7 +214,7 @@ export default {
     sorting: {
       heading: 'Automatic content sorting',
       title: 'Automatically sorts your images by content',
-      text: 'Ever wondered were this one shot went and you can not recall were you have placed it? Our app groups your content by topic or person and creates a readably file archive. So you spent less time searching for the perfect shoot.',
+      text: 'Ever wondered where this one shot went and you can not recall where you have placed it? Or lost complete oversight of your library. Our app groups your content by topic or person and creates a readable file archive. So you spent less time searching for the perfect shoot.',
       img: 'mdi-sort-variant',
       timeSorted: 'Sorted by Date',
       categorySorted: 'Sorted by Category',
@@ -222,7 +222,7 @@ export default {
     // instant 100% feature
     instant: {
       heading: 'Instantaneous 100% preview with no lag',
-      title: 'Directly get access tom a 100% preview of your uncompressed raw images',
+      title: 'Directly get access to a 100% preview of your uncompressed raw images',
       text: 'No stutter or lag when cycling through your images, they load instantly. You can directly zoom to the relevant parts to manually check the sharpness.',
       img: 'mdi-magnify-plus-outline',
     },
