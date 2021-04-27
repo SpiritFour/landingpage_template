@@ -4,6 +4,9 @@ import { messages } from './utils/translations.js'
 const base = '/landingpage_template'
 
 export default {
+  googleAnalytics: {
+    id: 'UA-XXX-X',
+  },
   // Target: https://go.nuxtjs.dev/config-target
   target: 'static',
   router: {
@@ -39,6 +42,7 @@ export default {
     '@nuxtjs/stylelint-module',
     // https://go.nuxtjs.dev/vuetify
     '@nuxtjs/vuetify',
+    '@nuxtjs/google-analytics',
   ],
   generate: {
     // choose to suit your project
