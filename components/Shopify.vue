@@ -207,7 +207,7 @@ export default {
     focus: {
       heading: 'Automatic Out-Of-Focus Detection',
       title: 'Detect out of focus regions easily',
-      text: 'Finally you dont have to spent ours sifting through images were the object is out of focus. We have automized this process by grouping out of focus images through AI. You stay in control at all time and still choose at any step',
+      text: 'Finally you dont have to spent hours sifting through images were the object is out of focus. We have automized this process by grouping out of focus images automatically with our AI. You stay in control at all time and still choose at any step',
       img: 'mdi-image-filter-center-focus-strong',
     },
     // sorting feature
