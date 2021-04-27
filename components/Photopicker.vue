@@ -6,10 +6,10 @@
     <div class="text-h4 mt-5">
       {{ $t('subPhrase') }}
     </div>
-    <v-col class="mx-auto mt-4" style="max-width: 500px">
+    <v-col class="mx-auto mt-4" style="max-width: 900px">
       <FreeTrialBtn />
     </v-col>
-    <v-row class="text-caption mt-4 mx-auto" style="max-width: 500px">
+    <v-row class="text-caption mt-4 mx-auto" style="max-width: 600px">
       {{ $t('disclaimer') }}
     </v-row>
     <v-container class="mt-12">
@@ -19,13 +19,8 @@
         </v-col>
       </v-row>
     </v-container>
-    <v-container
-      class="mt-4"
-      data-aos="fade-right"
-      data-aos-delay="50"
-      style="height: 1232px"
-    >
-      <v-row class="text-h5 font-weight-black" justify="center" id="features">
+    <v-container class="mt-4" data-aos="fade-right" data-aos-delay="50">
+      <v-row class="text-h5 font-weight-black" justify="center" id="Sorting">
         {{ $t('sorting.heading') }}
       </v-row>
       <v-row justify="center">
@@ -54,7 +49,7 @@
     </v-container>
     <!--    instant 100% -->
     <v-container class="mt-12" data-aos="fade-left" data-aos-delay="50">
-      <v-row class="text-h5 font-weight-black" justify="center">
+      <v-row class="text-h5 font-weight-black" justify="center" id="Preview">
         {{ $t('instant.heading') }}
       </v-row>
       <v-row justify="center" class="mt-8">
@@ -80,7 +75,7 @@
       </v-row>
     </v-container>
     <v-container class="mt-12" data-aos="fade-left" data-aos-delay="50">
-      <v-row class="text-h5 font-weight-black" justify="center">
+      <v-row class="text-h5 font-weight-black" justify="center" id="Focus">
         {{ $t('focus.heading') }}
       </v-row>
       <v-row class="mt-8">

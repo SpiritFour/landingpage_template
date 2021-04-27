@@ -1,52 +1,26 @@
 <template>
   <div>
     <!--    this is for all sm and up devices-->
-    <v-app-bar
-      v-if="$vuetify.breakpoint.mdAndUp"
-      absolute
-      app
-      fixed
-      elevation="0"
-      color="transparent"
-    >
+    <v-app-bar absolute app elevation="0" style="background: transparent">
+      <span class="font-weight-black text-h5">
+        <v-icon class="font-weight-black">mdi-eyedropper-variant</v-icon
+        >{{ $t('name') }}.app
+      </span>
       <div
-        style="
-          background: white;
-          border-top-left-radius: 5px;
-          border-bottom-left-radius: 5px;
-        "
-        class="pl-2 pr-1"
+        v-if="$vuetify.breakpoint.mdAndUp"
+        v-for="entry in content"
+        :key="entry.name"
       >
-        <span class="font-weight-black transparentFont animatedBG text-h5">
-          <v-icon class="font-weight-black transparentFont animatedBG"
-            >mdi-eyedropper-variant</v-icon
-          >{{ $t('name') }}
-        </span>
+        <v-btn elevation="0" plain class="pt-2" @click="clickHandler(entry.id)">
+          {{ entry.name }}
+        </v-btn>
       </div>
-      <div
-        class="pr-2 pl-1 font-weight-black text-h5"
-        style="
-          background: black;
-          border-top-right-radius: 5px;
-          border-bottom-right-radius: 5px;
-        "
-      >
-        <div class="transparentFont animatedBG">.app</div>
-      </div>
-
-      <v-btn elevation="0" plain @click="clickHandler('#features')">
-        {{ $t('features') }}
-      </v-btn>
       <v-spacer />
-      <Utils-LanguageSwitcher />
-    </v-app-bar>
-    <!--    for smaller devices add drawer-->
-    <v-app-bar v-else app absolute elevation="0" color="transparent">
-      <img src="~/assets/img/logo.png" height="100%" class="mr-4" />
-      <v-toolbar-title>{{ $t('name') }}</v-toolbar-title>
-      <v-spacer></v-spacer>
-
-      <v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
+      <v-app-bar-nav-icon
+        v-if="$vuetify.breakpoint.smAndDown"
+        @click.stop="drawer = !drawer"
+      ></v-app-bar-nav-icon>
+      <Utils-LanguageSwitcher v-else />
     </v-app-bar>
     <v-navigation-drawer
       v-model="drawer"
@@ -61,9 +35,14 @@
         <v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
       </v-list>
       <v-list nav dense>
-        <v-list-item>
-          <v-btn @click="clickHandler('#features')" elevation="0" plain>
-            {{ $t('features') }}
+        <v-list-item v-for="entry in content" :key="entry.name">
+          <v-btn
+            elevation="0"
+            plain
+            class="pt-2"
+            @click="clickHandler(entry.id)"
+          >
+            {{ entry.name }}
           </v-btn>
         </v-list-item>
         <v-list-item> </v-list-item>
@@ -80,7 +59,14 @@
 <script>
 export default {
   data() {
-    return { drawer: false }
+    return {
+      drawer: false,
+      content: [
+        { name: 'Sorting', id: '#Sorting' },
+        { name: 'Preview', id: '#Preview' },
+        { name: 'Focus', id: '#Focus' },
+      ],
+    }
   },
   methods: {
     clickHandler(target) {

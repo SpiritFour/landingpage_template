@@ -1,67 +1,39 @@
 <template>
   <v-row justify="center" align="center">
-    <v-col v-if="!jump" cols="12" sm="6" align="center">
-      <v-row justify="center">
-        <v-col
-          align-self="center"
-          cols="auto"
-          class="mx-0 pa-0"
-          style="background: white"
-          ><div class="transparentFont animatedBG font-weight-black">
-            Then
-          </div></v-col
+    <v-col v-if="!jump" cols="12" md="9">
+      <v-form
+        action="https://buttondown.email/api/emails/embed-subscribe/ReimaginingImageCulling"
+        method="post"
+        target="popupwindow"
+        id="form"
+        ref="form"
+      >
+        <v-text-field
+          class="input-padding"
+          name="email"
+          :label="$t('enterEmail')"
+          required
+          solo
+          background-color="white"
+          light
+          style="width: 100%"
         >
-        <v-col style="max-width: 220px">
-          <v-form
-            action="https://buttondown.email/api/emails/embed-subscribe/ReimaginingImageCulling"
-            method="post"
-            target="popupwindow"
-            id="form"
-            ref="form"
-          >
-            <v-text-field
-              id="emailField"
-              name="email"
-              v-model="email"
-              :rules="emailRules"
-              :label="$t('enterEmail')"
-              required
-              solo
-              background-color="white"
-              light
-            >
-            </v-text-field>
-          </v-form>
-        </v-col>
-      </v-row>
+        </v-text-field>
+      </v-form>
     </v-col>
-    <v-col cols="12" sm="6">
-      <v-row justify="center">
-        <v-col
-          v-if="!jump"
-          align-self="center"
-          cols="auto"
-          class="mx-0 pa-0"
-          style="background: white"
-          ><div class="transparentFont animatedBG font-weight-black">
-            and
-          </div></v-col
-        >
-        <v-col style="max-width: 220px">
-          <v-btn
-            action="https://buttondown.email/api/emails/embed-subscribe/ReimaginingImageCulling"
-            method="post"
-            target="popupwindow"
-            color="info"
-            elevation="0"
-            x-large
-            class="font-weight-black"
-            style="border-radius: 4px"
-            @click="click"
-            >{{ $t('startFree') }}
-          </v-btn>
-        </v-col>
-      </v-row>
+    <v-col cols="12" md="3" class="mt-0 pb-10">
+      <v-btn
+        action="https://buttondown.email/api/emails/embed-subscribe/ReimaginingImageCulling"
+        method="post"
+        target="popupwindow"
+        color="info"
+        elevation="0"
+        x-large
+        class="font-weight-black"
+        style="border-radius: 4px"
+        @click="click"
+        >{{ $t('startFree') }}
+      </v-btn>
     </v-col>
   </v-row>
 </template>
@@ -102,22 +74,17 @@ export default {
 </script>
 
 <style>
-.transparentFont {
-  -webkit-text-fill-color: transparent;
-  -webkit-background-clip: text;
-}
-.label {
-  font-size: 0.85em;
+.input-padding div div div * {
+  padding-left: 10px;
 }
 </style>
-
 <i18n lang="json5">
 {
   en: {
     startFree: 'Start free trial',
     emailRequired: 'E-mail is required',
     emailValid: 'E-mail must be valid',
-    enterEmail: 'Email',
+    enterEmail: 'Enter your email address',
   },
 }
 </i18n>
