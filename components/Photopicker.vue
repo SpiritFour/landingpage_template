@@ -217,14 +217,14 @@ export default {
     focus: {
       heading: 'Automatic Out-Of-Focus Detection',
       title: 'Detect out of focus regions easily',
-      text: 'Finally you dont have to spent ours sifting through images were the object is out of focus. We have automized this process by grouping out of focus images through AI. You stay in control at all time and still choose at any step',
+      text: 'Finally you dont have to spent hours sifting through images were the object is out of focus. We have automized this process by grouping out of focus images automatically with our AI. You stay in control at all time and still choose at any step',
       img: 'mdi-image-filter-center-focus-strong',
     },
     // sorting feature
     sorting: {
       heading: 'Automatic content sorting',
       title: 'Automatically sorts your images by content',
-      text: 'Ever wondered were this one shot went and you can not recall were you have placed it? Our app groups your content by topic or person and creates a readably file archive. So you spent less time searching for the perfect shoot.',
+      text: 'Ever wondered where this one shot went and you can not recall where you have placed it? Or lost complete oversight of your library. Our app groups your content by topic or person and creates a readable file archive. So you spent less time searching for the perfect shoot.',
       img: 'mdi-sort-variant',
       timeSorted: 'Sorted by Date',
       categorySorted: 'Sorted by Category',
