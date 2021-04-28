@@ -6,6 +6,7 @@
         <v-icon class="font-weight-black">mdi-eyedropper-variant</v-icon
         >{{ $t('name') }}.app
       </span>
+
       <div
         v-if="$vuetify.breakpoint.mdAndUp"
         v-for="entry in content"
@@ -15,6 +16,7 @@
           {{ entry.name }}
         </v-btn>
       </div>
+
       <v-spacer />
       <v-app-bar-nav-icon
         v-if="$vuetify.breakpoint.smAndDown"
